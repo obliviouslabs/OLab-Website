@@ -1,0 +1,8 @@
+---
+layout: default
+img: dog.png
+category: Services
+title: Applications of ORAM
+description: |
+---
+  Our Path ORAM algorithm is used by the [Signal encrypted messenger](https://signal.org/blog/building-faster-oram/) for private contact discovery. ORAM can also be used in blockchains to enable private order flow and mitigate Miner Extractable Value (MEV).

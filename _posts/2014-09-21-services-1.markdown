@@ -1,0 +1,8 @@
+---
+layout: default
+img: ipad.png
+category: Services
+title: What is ORAM?
+description: |
+---
+  Oblivious RAM (ORAM) provides a secret database that 'encrypts' not only the data contents, but also the accesses to data.
