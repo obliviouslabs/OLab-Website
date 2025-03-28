@@ -1,8 +1,0 @@
----
-layout: default
-img: phones.png
-category: Services
-title: Open source
-description: |
----
-We provide open source implementations of Oblivious RAM and oblivious algorithms. Check out our open source releases on [Github](https://github.com/obliviouslabs/oram).

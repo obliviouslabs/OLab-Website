@@ -1,32 +1,25 @@
-# ----------------------- #
-#      Main Configs       #
-# ----------------------- #
+title:              Oblivious Labs
+email:              junxi@obliviouslabs.com
+description:        We provide open source implementations of Oblivious RAM and oblivious algorithms.
+author:             Oblivious Labs
+baseurl:            ""
+url:                "https://startbootstrap.github.io"
 
-url: http://yoursite.com
-title: Oblivious Labs
-email: your-email@domain.com
-author: Your Name
-description: > # "Write an awesome description for your new site here. 
-  You can edit this line in _config.yml. It will appear in your document 
-  head meta (for Google search results) and in your feed.xml site 
-  description.
-copyright: 'Copyright &copy; 2015 Your Name. All Rights Reserved.'
-credits: 'Credits: Landing Page is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/">Start Bootstrap</a>.'
+# Social Profiles
+twitter_username:   obliviouslabs
+github_username:    obliviouslabs
+facebook_username:  
+instagram_username:  
+linkedin_username:
 
-# ----------------------- #
-#    Jekyll & Plugins     #
-# ----------------------- #
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
-markdown: kramdown
-permalink: pretty
-
-# ----------------------- #
-#   3rd Party Settings    #
-# ----------------------- #
-
-social:
-  - title: twitter
-    url: https://x.com/obliviouslabs
-  - title: github
-    url: https://github.com/obliviouslabs/oram
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
