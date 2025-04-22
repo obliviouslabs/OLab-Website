@@ -1,6 +1,6 @@
 ---
 layout: home
-background: '/img/bg-index.jpg'
+background: '/img/home-bg2.webp'
 ---
 <h2 style="text-align: center;">Intro to ORAM</h2>
 
