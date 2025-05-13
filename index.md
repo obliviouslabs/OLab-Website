@@ -4,9 +4,9 @@ background: '/img/home-bg2.webp'
 ---
 <h2 style="text-align: center;">Intro to ORAM</h2>
 
-**What is ORAM**
+**What is Oblivious RAM**
 
-Oblivious RAM (ORAM) provides a secret database that 'encrypts' not only the data contents, but also the accesses to data.
+Oblivious RAM (ORAM) provides a secret database that 'encrypts' not only the data contents, but also the <b> accesses </b> to data.
 
 **Application of ORAM**
 
