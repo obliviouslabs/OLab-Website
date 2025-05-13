@@ -1,4 +1,4 @@
-BASE_URL ?= "https://www.obliviouslabs.com"
+BASE_URL ?= "https://www.obliviouslabs.com/"
 
 install:
 	npm install
