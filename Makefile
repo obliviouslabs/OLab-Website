@@ -1,4 +1,4 @@
-BASE_URL?="https://www.obliviouslabs.com/"
+BASE_URL?="https://www.obliviouslabs.com"
 
 install:
 	npm install
@@ -7,6 +7,6 @@ install:
 
 build:
 	node build.js
-	bundle exec jekyll build --baseurl "${BASE_URL}"
+	bundle exec jekyll build --baseurl $(BASE_URL)
 
 all: install build
