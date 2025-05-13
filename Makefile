@@ -9,4 +9,8 @@ build:
 	node build.js
 	bundle exec jekyll build --baseurl $(BASE_URL)
 
+build-vercel:
+	node build.js
+	bundle exec jekyll build
+
 all: install build
