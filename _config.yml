@@ -3,7 +3,7 @@ email:              obliviouslabs@proton.me
 description:        We provide open source implementations of Oblivious RAM and oblivious algorithms.
 author:             Oblivious Labs
 baseurl:            ""
-url:                "https://obliviouslabs.com"
+url:                "https://www.obliviouslabs.com"
 
 # Social Profiles
 twitter_username:   obliviouslabs
