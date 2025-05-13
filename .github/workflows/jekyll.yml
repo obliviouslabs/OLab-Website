@@ -46,7 +46,7 @@ jobs:
       - name: Prepare build environment
         run: make install
       - name: Build with npm and Jekyll
-        run: make build
+        run: make build-vercel
         # run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
