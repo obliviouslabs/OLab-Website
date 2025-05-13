@@ -12,7 +12,10 @@ Oblivious RAM (ORAM) provides a secret database that 'encrypts' not only the dat
 
 The Path ORAM algorithm, co-invented
 by our co-founder, 
-is in use by the [Signal encrypted messenger](https://signal.org/blog/building-faster-oram/) for private contact discovery. ORAM can also be used in blockchains to enable private order flow and mitigate Miner Extractable Value (MEV).
+is in use by the [Signal encrypted messenger](https://signal.org/blog/building-faster-oram/) for private contact discovery. 
+<br>
+
+ORAM can also be used in blockchains to enable private order flow and mitigate Miner Extractable Value (MEV).
 
 **Open Source**
 
