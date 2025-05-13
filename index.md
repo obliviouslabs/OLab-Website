@@ -2,7 +2,7 @@
 layout: home
 background: '/img/home-bg2.webp'
 ---
-<h2 style="text-align: center;">Intro to ORAM</h2>
+<h2 style="text-align: center;">Introduction to ORAM</h2>
 
 **What is Oblivious RAM**
 
