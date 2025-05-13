@@ -27,11 +27,13 @@
     },
     "dependencies": {
         "bootstrap": "4.6.0",
+        "ethers": "^6.14.0",
         "font-awesome": "4.7.0",
         "jquery": "3.6.0",
         "startbootstrap-clean-blog": "5.1.0"
     },
     "devDependencies": {
-        "browser-sync": "2.26.14"
+        "browser-sync": "2.26.14",
+        "esbuild": "^0.25.4"
     }
 }
