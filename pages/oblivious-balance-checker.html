@@ -7,15 +7,89 @@ permalink: /WBTCdemo/
 ---
 
 <div id="vue-root">
-  [[ message ]]
-  <button @click="count++">You've clicked me [[ count ]]x</button>
+  <div v-if="enabled" class="container text-center">
+    <div class="balance-checker">
+      <h2 class="main-title about-h2">[[ tokenName ]] Balance Checker Demo</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <form @submit.prevent="handleSubmit">
+            <div class="form-group">
+              <img :alt="tokenName" :src="logo_url" />
+              <label for="ethAddress">[[ tokenName ]] Account address:</label>
+              <input
+                id="ethAddress"
+                v-model="ethAddress"
+                class="form-control"
+                type="text"
+                placeholder="Enter Ethereum Address"
+                required
+                size="40"
+              />
+              <button type="submit" class="btn" style="cursor:pointer">
+                Check Balance
+              </button>
+            </div>
+          </form>
+          <div id="result" class="result mt-3" v-html="result"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-  // create & mount app only on #vue-root
-  Vue.createApp({
-    delimiters: ['[[', ']]'],
-    data() { return { message: 'Hello from Vue!', count: 0 } }
-  }).mount('#vue-root')
+<script type="module">
+import { CheckBalance, CheckStatus, tokenName, logo } from './clienttdx.js'
+let logo_url = '{{ "img/wbtc.svg" | relative_url }}'
+
+Vue.createApp({
+  delimiters: ['[[', ']]'],
+  data() {
+    return {
+      enabled: false,
+      ethAddress: '',
+      result: '',
+      tokenName,
+      logo_url
+    }
+  },
+  methods: {
+    async testBackendRunning() {
+      try {
+        const status = await CheckStatus()
+        if (status.message === 'All good!') {
+          this.enabled = true
+        }
+      } catch (e) {
+        console.error('Status check failed', e)
+      }
+    },
+    async handleSubmit() {
+      let addr = this.ethAddress.trim()
+      if (!addr) {
+        this.result = '<h4 class="text-danger">Please enter an Ethereum address.</h4>'
+        return
+      }
+      if (!addr.startsWith('0x')) addr = '0x' + addr
+      if (addr.length < 42) {
+        addr = '0x' + '0'.repeat(42 - addr.length) + addr.slice(2)
+      }
+      if (!/^0x[0-9a-fA-F]{40}$/.test(addr)) {
+        this.result = '<h4 class="text-danger">Invalid Ethereum address.</h4>'
+        return
+      }
+      this.result = '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>'
+      try {
+        const resp = await CheckBalance(addr)
+        this.result = `<h4>${resp.balance_str} ${tokenName} for ${resp.addr} in block ${resp.block} (${resp.state_root})</h4>`
+      } catch (err) {
+        console.error(err)
+        this.result = '<h4 class="text-danger">Error checking balance. Please try again later.</h4>'
+      }
+    }
+  },
+  mounted() {
+    this.testBackendRunning()
+  }
+}).mount('#vue-root')
 </script>
