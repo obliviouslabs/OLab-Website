@@ -57,6 +57,8 @@ jobs:
 
   # Deployment job
   deploy:
+    # Only run if we manually trigger the workflow on github in the actins tab > Run workflow
+    if: github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

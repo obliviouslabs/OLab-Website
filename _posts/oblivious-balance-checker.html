@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Oblivious Balance Checker"
+date: 2025-05-15 12:00:00 -0400
+# background: '/img/posts/01.jpg'
+---
+
+<div id="vue-root">
+  {{ message }}
+  <button @click="count++">You've clicked me {{ count }}x</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  // create & mount app only on #vue-root
+  Vue.createApp({
+    data() { return { message: 'Hello from Vue!', count: 0 } }
+  }).mount('#vue-root')
+</script>
