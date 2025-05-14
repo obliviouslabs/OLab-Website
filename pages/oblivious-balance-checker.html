@@ -38,7 +38,8 @@ permalink: /WBTCdemo/
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="/assets/js/tdx-lib.js"></script>
+<script src="{{ '/assets/js/tdx-lib.js' | relative_url }}" crossorigin="anonymous"></script>
+
 <script>
 Vue.createApp({
   delimiters: ['[[', ']]'],
