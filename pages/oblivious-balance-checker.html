@@ -14,7 +14,7 @@ permalink: /WBTCdemo/
         <div class="col-md-12">
           <form @submit.prevent="handleSubmit">
             <div class="form-group">
-              <img :alt="tokenName" :src="logo_url" />
+              <img :alt="tokenName" :src="logo" />
               <label for="ethAddress">[[ tokenName ]] Account address:</label>
               <input
                 id="ethAddress"
@@ -38,10 +38,8 @@ permalink: /WBTCdemo/
 </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script type="module">
-import { CheckBalance, CheckStatus, tokenName, logo } from './clienttdx.js'
-let logo_url = '{{ "img/wbtc.svg" | relative_url }}'
-
+<script src="/assets/js/tdx-lib.js"></script>
+<script>
 Vue.createApp({
   delimiters: ['[[', ']]'],
   data() {
@@ -49,17 +47,15 @@ Vue.createApp({
       enabled: false,
       ethAddress: '',
       result: '',
-      tokenName,
-      logo_url
+      tokenName: TDXLib.tokenName,
+      logo: '{{ "img/wbtc.svg" | relative_url }}'
     }
   },
   methods: {
     async testBackendRunning() {
       try {
-        const status = await CheckStatus()
-        if (status.message === 'All good!') {
-          this.enabled = true
-        }
+        const status = await TDXLib.CheckStatus()
+        if (status.message === 'All good!') this.enabled = true
       } catch (e) {
         console.error('Status check failed', e)
       }
@@ -80,16 +76,14 @@ Vue.createApp({
       }
       this.result = '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>'
       try {
-        const resp = await CheckBalance(addr)
-        this.result = `<h4>${resp.balance_str} ${tokenName} for ${resp.addr} in block ${resp.block} (${resp.state_root})</h4>`
+        const resp = await TDXLib.CheckBalance(addr)
+        this.result = `<h4>${resp.balance_str} ${this.tokenName} for ${resp.addr} in block ${resp.block} (${resp.state_root})</h4>`
       } catch (err) {
         console.error(err)
         this.result = '<h4 class="text-danger">Error checking balance. Please try again later.</h4>'
       }
     }
   },
-  mounted() {
-    this.testBackendRunning()
-  }
+  mounted() { this.testBackendRunning() }
 }).mount('#vue-root')
 </script>
