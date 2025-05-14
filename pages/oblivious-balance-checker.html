@@ -35,7 +35,10 @@ permalink: /WBTCdemo/
       </div>
     </div>
   </div>
-</div>
+  <div v-else class="container text-center">
+    <h2 class="main-title about-h2">Backend is currently not running</h2>
+    <p>Please check the backend server status.</p>
+  </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="{{ '/assets/js/tdx-lib.js' | relative_url }}" crossorigin="anonymous"></script>
