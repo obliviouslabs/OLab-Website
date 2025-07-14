@@ -21,13 +21,13 @@ ORAM can also be used in blockchains to enable private order flow and mitigate M
 
 <ul>
 <li>
-Oblivious key-value store [Github] (https://github.com/obliviouslabs/oram).
+Oblivious key-value store [[Github](https://github.com/obliviouslabs/oram)].
 </li>
 <li>
-ORAM benchmarks, including comparison with Signal and Meta's implementations [Github] (https://github.com/obliviouslabs/benchmarks).
+ORAM benchmarks, including comparison with Signal and Meta's implementations [[Github](https://github.com/obliviouslabs/benchmarks)].
 </li>
 <li>
-Oblivious STL in Rust [Github] (https://github.com/obliviouslabs/rostl).
+Oblivious STL in Rust [[Github](https://github.com/obliviouslabs/rostl)].
 </li>
 </ul>
 
