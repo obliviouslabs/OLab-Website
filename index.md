@@ -34,5 +34,5 @@ Oblivious STL in Rust [<a href="https://github.com/obliviouslabs/rostl"><u>Githu
 
 **Demo**
 
-Oblivious ERC20 token balance checker <a href="https://www.obliviouslabs.com/WBTCdemo/"><u>demo</u></a>
+Check out our oblivious ERC20 token balance checker <a href="https://www.obliviouslabs.com/WBTCdemo/"><u>demo</u></a>.
 
