@@ -11,6 +11,7 @@ GEM
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
+    erb (6.0.7)
     eventmachine (1.2.7)
     ffi (1.17.1)
     ffi (1.17.1-aarch64-linux-gnu)
@@ -154,6 +155,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  erb
   jekyll (>= 3.8.5)
   jekyll-feed (~> 0.6)
   jekyll-paginate (~> 1.1.0)

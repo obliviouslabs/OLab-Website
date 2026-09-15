@@ -30,9 +30,3 @@ ORAM benchmarks, including comparison with Signal and Meta's implementations [<a
 Oblivious STL in Rust [<a href="https://github.com/obliviouslabs/rostl"><u>Github</u></a>].
 </li>
 </ul>
-
-
-**Demo**
-
-Check out our oblivious ERC20 token balance checker <a href="https://www.obliviouslabs.com/WBTCdemo/"><u>demo</u></a>.
-
